@@ -22,8 +22,7 @@ public class EmployeeController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Employee> getEmployeeById(@PathVariable String id) {
-
+    public ResponseEntity<Employee> getEmployeeById(@PathVariable int id) {
         Optional<Employee> employee = employeeService.getEmployeeById(id);
         return employee.map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
@@ -39,17 +38,17 @@ public class EmployeeController {
 
     public static class CreateEmployeeResponse {
 
-        private String id;
+        private int id;
 
-        public CreateEmployeeResponse(String id) {
+        public CreateEmployeeResponse(int id) {
             this.id = id;
         }
 
-        public String getId() {
+        public int getId() {
             return id;
         }
 
-        public void setId(String id) {
+        public void setId(int id) {
             this.id = id;
         }
     }

@@ -16,7 +16,7 @@ public class EmployeeService {
         repo.saveEmployee(employee);
     }
 
-    public Optional<Employee> getEmployeeById(String id) {
+    public Optional<Employee> getEmployeeById(int id) {
         return repo.getEmployeeById(id);
     }
 

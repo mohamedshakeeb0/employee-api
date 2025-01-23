@@ -35,17 +35,16 @@ public class EmployeeRepo {
         }
     }
 
-    public Optional<Employee> getEmployeeById(String id) {
-
+    public Optional<Employee> getEmployeeById(int id) {
         return getAllEmployees().stream()
-                .filter(employee -> employee.getId().equals(id))
+                .filter(employee -> employee.getId() == id)
                 .findFirst();
     }
 
     public void saveEmployee(Employee employee) {
 
         List<Employee> employees = getAllEmployees();
-        employee.setId(String.valueOf(employees.size() + 1));
+        employee.setId(Integer.valueOf(employees.size() + 1));
         employees.add(employee);
 
         try {

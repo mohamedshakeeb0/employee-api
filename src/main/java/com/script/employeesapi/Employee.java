@@ -2,7 +2,7 @@ package com.script.employeesapi;
 
 public class Employee {
 
-    private String id;
+    private int id;
     private String firstName;
     private String lastName;
     private String dateOfBirth;
@@ -25,12 +25,12 @@ public class Employee {
     }
 
     // getters and setters
-    public String getId() {
+    public int getId() {
 
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
 
         this.id = id;
     }
