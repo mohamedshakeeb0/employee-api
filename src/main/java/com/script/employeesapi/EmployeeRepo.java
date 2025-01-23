@@ -61,9 +61,18 @@ public class EmployeeRepo {
         List<Employee> filteredEmployees = new ArrayList<>();
 
         for (Employee employee : employees) {
-            boolean matchesName = name == null || employee.getFirstName().contains(name) || employee.getLastName().contains(name);
-            boolean matchesSalary = (fromSalary == null || employee.getSalary() >= fromSalary) &&
-                    (toSalary == null || employee.getSalary() <= toSalary);
+            boolean matchesName = name == null ||
+                    employee.getFirstName().contains(name) ||
+                    employee.getLastName().contains(name);
+
+            boolean matchesSalary = true;
+
+            if (fromSalary != null || toSalary != null) {
+                Double employeeSalary = Double.parseDouble(employee.getSalary());
+
+                matchesSalary = (fromSalary == null || employeeSalary >= fromSalary) &&
+                        (toSalary == null || employeeSalary <= toSalary);
+            }
 
             if (matchesName && matchesSalary) {
                 filteredEmployees.add(employee);

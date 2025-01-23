@@ -6,7 +6,7 @@ public class Employee {
     private String firstName;
     private String lastName;
     private String dateOfBirth;
-    private double salary;
+    private String salary;
     private String joinDate;
     private String department;
 
@@ -14,7 +14,7 @@ public class Employee {
     }
 
     //construct
-    public Employee(String firstName, String lastName, double salary, String dateOfBirth, String joinDate, String department) {
+    public Employee(String firstName, String lastName, String salary, String dateOfBirth, String joinDate, String department) {
 
         this.firstName = firstName;
         this.lastName = lastName;
@@ -65,12 +65,12 @@ public class Employee {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public double getSalary() {
+    public String getSalary() {
 
         return salary;
     }
 
-    public void setSalary(double salary) {
+    public void setSalary(String salary) {
 
         this.salary = salary;
     }
